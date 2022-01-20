@@ -1,0 +1,261 @@
+\documentclass[12pt]{article}
+\usepackage{settings}
+\usepackage[utf8]{inputenc}
+
+\title{\kemin}
+\author{臺大資管營教學團隊\quad Michael}
+\date{2021.12.5}
+
+\begin{document}
+\begin{CJK*}{UTF8}{bkai}
+\maketitle
+\setcounter{section}{-2}
+\section{Compiler}
+To save the time in our class and memory space in your computer, we will use an online compiler on Programiz. You may access it by clicking {\color{blue}\href{https://www.programiz.com/python-programming/online-compiler/}{this}} or scan the QR-code below.
+\begin{center}
+    \qrcode[height = 3cm]{https://www.programiz.com/python-programming/online-compiler/}
+\end{center}
+\section{Does it work?}
+Try this line below on Programiz $\rightarrow$ main.py:
+\begin{itemize}
+    \item \texttt{print("Hello World!")}
+\end{itemize}
+Try this line below on Programiz $\rightarrow$ Shell:
+\begin{itemize}
+    \item \texttt{1 + 1}
+\end{itemize}
+
+\section{What is Python?}
+Python is a high-level general-purpose programming language. It is created by Guido 
+van Rossum in 1989 when he was looking for a project to keep him occupied in 
+Christmas. It is now one of the most popular programming languages in the world.
+
+\subsection{Why Python ?}
+\begin{itemize}
+    \item Works on different operating systems
+    \item Simple syntax similar to English language
+    \item Runs on interpreter systems, so that code can be executed as soon as it's written
+    \item Hundreds of libraries
+    \item Can be appied to various fields
+\end{itemize}
+
+\subsection{What can Python Do ?}
+\begin{itemize}
+    \item Handle Big data to perform statistic analysis
+    \item Backend (server) of web applications
+    \item AI and Machine Learning
+    \item Programming applications
+\end{itemize}
+
+\section{Variables and \texttt{print()}}
+\subsection{Variables}
+There are many data types, one of which is integer, abbreviated \texttt{int}, in Python. We will focus on this data type today. Nevertheless, we still list some basic data types here for your further studying:
+\begin{itemize}
+    \item Integers
+    \item Floating-Point Numbers
+    \item Complex Numbers
+    \item Strings
+    \item Boolean Type
+\end{itemize}
+As a coder, we need ``variables'' to store some data for further use. For each variable assignment, it would be better to specify its data type. See the example below.
+\subsection{\texttt{print()}}
+\texttt{print()} is a function helping us to display the value of a variable.
+\subsubsection{Example}
+Try this on Programiz $\rightarrow$ main.py and see what happens.
+\begin{lstlisting}[language = python]
+    a = int(3)
+    b = int(5)
+    print(b)
+    print(a)
+\end{lstlisting}
+\subsection{Formatted \texttt{print()}}
+We can print a formatted string with \texttt{f''} or \texttt{f""}. \\
+Inside this string, you can write a Python expression between \{ and \}
+characters that can refer to variables or literal values. 
+\subsubsection{Example}
+\begin{lstlisting}[language =python]
+    a = int(3)
+    b = str('Michael')
+    print(f'The value of a is {a}')
+    print(f'my name is {b}')
+\end{lstlisting}
+
+Now, we believe you come familiar with the assignment operator \texttt{=} and a function \texttt{print()}. Wait... what do I mean by ``operator''?
+\section{Arithmetic and Bitwise Operators}
+We've learned how to store a value in a variable. However, we would like to play more tricks on those variables.
+\subsection{Arithmetic Operators}
+\begin{itemize}
+    \item \texttt{+}
+    \item \texttt{-}
+    \item \texttt{*}
+    \item \texttt{//}
+    \item \texttt{**}
+\end{itemize}
+\subsection{Bitwise Operators}
+Before going into this subsection, we'd better first know what binary representation is.
+\setcounter{subsubsection}{-1}
+\subsubsection*{Binary Representation}
+In decimal representation, $7050$ actually means $ 7 \times 10^3 + 0 \times 10^2 + 5 \times 10^1 + 0 \times 10^0$.
+\begin{itemize}
+    \item Base: \underline{\phantom{xxxxxxxxx}}
+    \item Digits: \underline{\phantom{xxxxxxxxx}}
+\end{itemize}
+What if the base is not ten?
+\subsubsection*{Memos}
+\vskip 200pt
+\subsubsection*{Exercise}
+\begin{itemize}
+    \item What is the binary representation of 32 ?
+    \vskip 150pt
+    \item What is the binary representation of 102 ?
+    \vskip 150pt
+\end{itemize}
+\newpage
+\setcounter{subsubsection}{0}
+\subsubsection{List of Bitwise Operators}
+\begin{itemize}
+    \item \texttt{\&} :
+    Performs logical conjunction on the corresponding bits of its operands.
+    \item \texttt{|} : 
+    Performs logical disjunction. For each corresponding pair of bits. 
+    \item \texttt{\^} :
+    Performs exclusive disjunction on the bit pairs
+    \item \texttt{>>} :
+    Drop the n bits on the right. 
+    \item \texttt{<<} :
+    Moves the bits to the left by n bits. 
+\end{itemize}
+\subsection{Assignment Operators}
+\begin{itemize}
+    \item \texttt{=}
+    \item \texttt{+=}
+    \item $\vdots$
+    \item \texttt{//=}
+    \item \texttt{\&=}
+    \item $\vdots$
+    \item \texttt{<<=}
+\end{itemize}
+\section{Statements and Conditions}
+Sometimes, we may want our program do different things based on different conditions.
+\begin{itemize}
+    \item \texttt{if}
+    \item \texttt{else}
+    \item \texttt{elif}
+\end{itemize}
+Moreover, things are usually complicated so we need some ``conjunctions''.
+\begin{itemize}
+    \item \texttt{and}
+    \item \texttt{or}
+\end{itemize}
+\subsection{Exercise}
+Write a program to determine whether a number is divisible by 7 or 5, between 1500 and 2700. If not, your program need to output whether the number is "Out of range" or "Not divisible".
+\subsubsection{Hints}
+\begin{enumerate}
+    \item Store the number in a variable
+    \item Write a if statement to check whether the number is in range
+    \item Write a if statement inside the previous one and check if the number is divisible by 7 or 5
+    \item print anything you want if both statement is true
+    \item Figure out the rest by yourself !
+\end{enumerate}
+% Would nested if statement be too hard for them ?
+
+% Lecturer, put an exercise you like here.
+% \begin{enumerate}
+%     \item {\color{blue} \href{https://atcoder.jp/contests/abc196/tasks/abc196_a}{Link}} and QR-code
+%     \begin{center}
+%         \qrcode[height = 3cm]{https://atcoder.jp/contests/abc196/tasks/abc196_a}
+%     \end{center}
+% \end{enumerate}
+\section{Lists}
+Lists are used to store multiple items in a single variable. \\
+\subsection{Constructing a list}
+
+
+\subsection{Accessing Elements in List}
+We use "index" to access elements in a list. \\
+the first item in lists has index 0, the second item has index 1 etc. \\
+We can access the third element using \texttt{my\_list [2]}. \\
+Use \texttt{[start:end]} to access a part of the list. \\ \\
+{\large Examples} \\
+L = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50] \\
+\texttt{L[2]} $\Rightarrow$ 15 \\
+\texttt{L[-2]} $\Rightarrow$ 45 \\
+\texttt{L[2:5]} $\Rightarrow$ [15, 20, 25] \\
+\texttt{L[:3]} $\Rightarrow$ [5, 10, 15] \\
+\texttt{L[6:]} $\Rightarrow$ [35, 40, 45, 50] \\
+
+btw, you can print out the whole list by \texttt{print (my\_list)}
+% \subsubsection{Small Exercise}
+% Change the third number of \texttt{my\_list} to any number you want and print it.
+
+\subsection{Add or Remove Elements}
+\begin{itemize}
+    \item Use \texttt{append()} to add element to the end of the list. \\
+          e.g. \texttt{my\_list.append(50)} 
+    \item Use \texttt{insert()} to add element to a specific index of the list. \\
+          e.g. \texttt{my\_list.insert(i, elem)}
+    \item Use \texttt{remove()} to remove an element in the list. \\
+          e.g. \texttt{my\_list.remove(60)}
+    \item Use \texttt{pop()} to remove an element in a specific index. \\
+          e.g. \texttt{my\_list.pop(1)}
+\end{itemize}
+
+\subsection{Some Functions of Lists}
+\begin{itemize}
+    \item \texttt{len([5, 3, 1])} $\Rightarrow$ 3
+    \item \texttt{max([1, 2, 3, 4, 5])} $\Rightarrow$ 5
+    \item \texttt{min([0, 55, 3, 75])} $\Rightarrow$ 0
+    \item \texttt{sum([1, 2, 3, 4, 5])} $\Rightarrow$ 15
+\end{itemize}
+
+\section{For Loop and While Loop}
+\subsection{for loop}
+We can use for loops to make our program do repetitive things \\
+\begin{verbatim}
+    for i in range (0, 5):
+       (Do something)
+\end{verbatim}
+You could also use it to iterate through a list
+\begin{verbatim}
+    L = [5, 2, 88]
+    for i in L :
+       print (i)
+\end{verbatim}
+(Try on your computer to see what happens)
+\subsection{while loop}
+Execute a set of statements as long as a condition is true.\\
+\begin{verbatim}
+    i = 0
+    while (i < 5):
+       print (i)
+       i += 1
+\end{verbatim}
+\subsection{\texttt{break()} and \texttt{continue}}
+Use \texttt{break()} to break out of a loop. \\
+
+Use \texttt{continue} to skip rest of the code and start a new iteration. \\
+
+\subsection{Exercise}
+
+\section{Functions}
+A function is a block of code that runs when it's called.\\
+You can pass parameters into a function, it'll do some calculation and return the value to you.\\
+We've already used functions before ! (recall functions of lists)\\
+It's great to use functions so that you don't have to copy and paste your code everywhere.
+% Which is inconsistent and may lead to error
+
+\begin{verbatim}
+    def myFunction(num1, num2) :
+        return num1**2 + num2**2
+\end{verbatim}
+
+\section{Conclusion}
+Now that you've learned the basic syntax for Python, \\
+you can explore various packages for Python ! \\
+For example, numpy, pandas, matplotlib, scipy... \\\\
+Have fun !
+
+% beamer : https://www.overleaf.com/read/ycnhgdfcktnk
+
+\end{CJK*}
+\end{document}

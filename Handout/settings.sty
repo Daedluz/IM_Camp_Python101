@@ -1,0 +1,39 @@
+\usepackage[utf8]{inputenc}
+\usepackage{titling}
+    \setlength{\droptitle}{-10em} % 標題高度
+\usepackage{CJKutf8} % 支援中文
+\usepackage[left=3cm, right=3cm]{geometry} % 邊界調整
+\usepackage{qrcode}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\renewcommand{\indent}{\hspace{24pt}}
+
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}
+% constants
+\newcommand{\kemin}{基礎Python程式設計}
