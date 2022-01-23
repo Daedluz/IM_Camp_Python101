@@ -1,4 +1,3 @@
-% !TEX program = xelatex
 \documentclass{beamer}
 
 \usepackage{amsmath, amssymb}
@@ -9,6 +8,9 @@
 % \usepackage{qrcode}
 \usepackage{listings}
 \usepackage{graphicx}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=cyan}
+
 \graphicspath{ {./Pictures/} }
 
 \usefonttheme{professionalfonts}  
@@ -114,7 +116,8 @@
         %\newline
         \color{blue} \Large 2.1 Variables \\
         
-        \color{black} \normalsize \vskip 10pt As a coder, we need ``variables'' to store some data for further use. 
+        \color{black} \normalsize \vskip 10pt 
+        As a coder, we need ``variables'' to store some data for further use. 
         Here are some basic data types :
         \begin{itemize}
             \item Integers (We will focus on this !)
@@ -125,7 +128,9 @@
         \end{itemize}
         
         \note{
-        There are many data types, one of which is integer, abbreviated \texttt{int}, in Python. We will focus on this data type today. Nevertheless, we still list some basic data types here for your further studying
+        There are many data types, one of which is integer, abbreviated 
+        \texttt{int}, in Python. We will focus on this data type today. 
+        Nevertheless, we still list some basic data types here for your further studying
         }
     \end{frame}
     
@@ -227,8 +232,8 @@
     \end{frame}
 
     \begin{frame}{Arithmetic and Bitwise Operators}
-        $$ 0 \times 2^0 + 0 \times 2^1 + 0 \times 2^2 + 0 \times 2^3
-        + 0 \times 2^4 + 1 \times 2^5 = 32 $$
+        $$ 1 \times 2^5 + 0 \times 2^4 + 0 \times 2^3 + 0 \times 2^2 + 
+        0 \times 2^1 + 0 \times 2^0 = 32 $$
         $$ 100000 $$
     \end{frame}
     
@@ -240,8 +245,8 @@
     \end{frame}
 
     \begin{frame}{Arithmetic and Bitwise Operators}
-        $$ 0 \times 2^0 + 1 \times 2^1 + 1 \times 2^2 + 0 \times 2^3
-        + 0 \times 2^4 + 1 \times 2^5 + 1 \times 2^6 = 102 $$
+        $$ 1 \times 2^6 + 1 \times 2^5 + 0 \times 2^4 + 
+        0 \times 2^3 + 1 \times 2^2 + 1 \times 2^1 + 0 \times 2^0 = 102 $$
         $$ 1100110 $$
     \end{frame}
     
@@ -252,7 +257,7 @@
         \begin{itemize}
             \item \texttt{\&}
             \item \texttt{|}
-            \item \texttt{\^}
+            \item \texttt{ \^}
             \item \texttt{>>}
             \item \texttt{<<}
         \end{itemize}
@@ -261,7 +266,10 @@
     \begin{frame}{Arithmetic and Bitwise Operators}
         \color{blue} \Large Bitwise AND \\
         \color{black} \normalsize \vskip 10pt
-        The bitwise operator AND($\&$) would output the intersection of the two numbers.\\
+        % The bitwise operator AND($\&$) would output the intersection of the two numbers.\\
+        \begin{center}
+            \includegraphics[scale = 0.7]{AND.png}
+        \end{center}
     \end{frame}
     
     \begin{frame}{Arithmetic and Bitwise Operators}
@@ -281,7 +289,9 @@
     \begin{frame}{Arithmetic and Bitwise Operators}
         \color{blue} \Large Bitwise  OR\\
         \color{black} \normalsize \vskip 10pt
-        
+        \begin{center}
+            \includegraphics[scale = 0.7]{OR.png}
+        \end{center}
     \end{frame}
     
     \begin{frame}{Arithmetic and Bitwise Operators}
@@ -302,6 +312,9 @@
     \begin{frame}{Arithmetic and Bitwise Operators}
         \color{blue} \Large Bitwise  XOR\\
         \color{black} \normalsize \vskip 10pt
+        \begin{center}
+            \includegraphics[scale = 0.2]{XOR.png}
+        \end{center}
     \end{frame}
     
     \begin{frame}{Arithmetic and Bitwise Operators}
@@ -346,6 +359,8 @@
             a = a + 5
             print(a)
             a += 5
+            print(a)
+            a *= 2
             print(a)
         \end{verbatim}
     \end{frame}
@@ -685,13 +700,24 @@
     \begin{frame}{For Loop and While Loop}
         \color{blue} \Large Break \\
         \color{black} \normalsize \vskip 5pt
-        We use \texttt{break()} to break out of a loop. \\
+        We use \texttt{break} to get out of a loop. \\
     \end{frame}
     
     \begin{frame}{For Loop and While Loop}
         \color{blue} \Large Continue \\
         \color{black} \normalsize \vskip 5pt
         We use \texttt{continue} to skip rest of the code and start a new iteration. \\
+    \end{frame}
+
+    \begin{frame}[fragile]{For Loop and While Loop}
+        \color{blue} \Large Example \\
+        \color{black} \normalsize \vskip 5pt
+        \begin{verbatim}
+            for i in range(10):
+                if (i == 5):
+                    continue
+                print(i)
+        \end{verbatim}
     \end{frame}
     
     \begin{frame}{For Loop and While Loop}
@@ -752,6 +778,33 @@
         you can explore various packages for Python ! \\
         For example, \texttt{numpy, pandas, matplotlib, scipy}... \\
         
+    \end{frame}
+
+    \begin{frame}[plain, c]
+        \begin{center}
+            \color{blue} \LARGE Assignment
+        \end{center}
+    \end{frame}
+
+    \begin{frame}[fragile]{Assignment}
+        \color{blue} \Large Palindrome Number  \\
+        \color{black} \normalsize \vskip 10pt
+        An integer is a palindrome when it reads the same backward as forward. \\
+        Given an integer \texttt{x}, return \texttt{True} if \texttt{x} is palindrome integer. \vskip 10pt
+        Advanced: try doing it without turning \texttt{x} into a \texttt{string} \vskip 10pt
+
+        Submit your code \href{https://leetcode.com/problems/palindrome-number/}{here}
+    \end{frame}
+
+    \begin{frame}[fragile]{Assignment}
+        \color{blue} \Large Single Number  \\
+        \color{black} \normalsize \vskip 10pt
+        Given a non-empty array of integers nums, 
+        every element appears twice except for one. Find that single one. \vskip 10pt
+
+        Advanced: Make it run in linear time! (hint: XOR) \vskip 10pt 
+
+        Submit your code \href{https://leetcode.com/problems/single-number/}{here}
     \end{frame}
     
     \begin{frame}[plain, c]
